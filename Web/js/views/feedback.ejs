@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Feedback</title>
+  <link rel="stylesheet" href="./feedback.css">
+</head>
+<body>
+  <div class="feedback-container">
+    <h2>Send Us Your Feedback</h2>
+    <form id="feedbackForm" action="/feedback" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Submit Feedback</button>
+      <a href="/view_feedback">View Feedback</a>
+    </form>
+    <div class="message" id="feedbackMessage"></div>
+  </div>
+
+  <script src="feedback.js"></script>
+</body>
+</html>

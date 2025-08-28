@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyber Security Quiz</title>
+  <link rel="stylesheet" href="quiz.css">
+  
+</head>
+<body>
+
+  
+  <header>
+    <h1>🛡 Cyber Security Quiz</h1>
+    <p>Test your knowledge about online safety!</p>
+  </header>
+
+  
+  <main class="quiz-container">
+    <form id="quizForm">
+      
+      
+      <div class="quiz-card">
+        <h3>1. What is phishing?</h3>
+        <label><input type="radio" name="q1" value="a"> A type of online fishing game</label><br>
+        <label><input type="radio" name="q1" value="b"> Fake emails/websites to steal information</label><br>
+        <label><input type="radio" name="q1" value="c"> A strong password method</label>
+      </div>
+
+      
+      <div class="quiz-card">
+        <h3>2. What should a strong password include?</h3>
+        <label><input type="radio" name="q2" value="a"> Only your name</label><br>
+        <label><input type="radio" name="q2" value="b"> Numbers, symbols, upper & lowercase letters</label><br>
+        <label><input type="radio" name="q2" value="c"> Just 12345</label>
+      </div>
+
+      
+      <div class="quiz-card">
+        <h3>3. What does 2FA stand for?</h3>
+        <label><input type="radio" name="q3" value="a"> Two-Factor Authentication</label><br>
+        <label><input type="radio" name="q3" value="b"> Two-Fast Access</label><br>
+        <label><input type="radio" name="q3" value="c"> Two Free Accounts</label>
+      </div>
+
+      
+      <div class="quiz-card">
+        <h3>4. Which of these is safe online behavior?</h3>
+        <label><input type="radio" name="q4" value="a"> Sharing your OTP with friends</label><br>
+        <label><input type="radio" name="q4" value="b"> Clicking random unknown links</label><br>
+        <label><input type="radio" name="q4" value="c"> Using official websites & strong passwords</label>
+      </div>
+
+      
+      <div class="quiz-card">
+        <h3>5. Which of the following is a type of malware?</h3>
+        <label><input type="radio" name="q5" value="a"> Trojan horse</label><br>
+        <label><input type="radio" name="q5" value="b"> Firewall</label><br>
+        <label><input type="radio" name="q5" value="c"> VPN</label>
+      </div>
+
+      
+      <div class="quiz-card">
+        <h3>6. What is the purpose of a firewall?</h3>
+        <label><input type="radio" name="q6" value="a"> To wash your computer</label><br>
+        <label><input type="radio" name="q6" value="b"> To block unauthorized access</label><br>
+        <label><input type="radio" name="q6" value="c"> To store files safely</label>
+      </div>
+
+      
+      <div class="quiz-card">
+        <h3>7. What should you do if you get a suspicious email?</h3>
+        <label><input type="radio" name="q7" value="a"> Click the link quickly</label><br>
+        <label><input type="radio" name="q7" value="b"> Report & delete it</label><br>
+        <label><input type="radio" name="q7" value="c"> Share it with friends</label>
+      </div>
+
+      
+      <button type="button" onclick="checkAnswers()">Submit Quiz</button>
+    </form>
+
+    
+    <div id="result" class="result-box"></div>
+  </main>
+
+ 
+  <footer>
+    <p>© 2025 Cyber Safety Quiz | Digital Literacy Project</p>
+  </footer>
+
+  <script src="quiz.js"></script>
+</body>
+</html>

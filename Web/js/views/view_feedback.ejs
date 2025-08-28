@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Feedback</title>
+  <link rel="stylesheet" href="/view_feedback.css" />
+</head>
+<body>
+  <div class="feedback-view-container">
+    <h2>User Feedback</h2>
+    <div id="feedbackList">Loading feedback...</div>
+    <a href="/" class="back-home">← Back to Home</a>
+  </div>
+
+   <script>
+    // Escape HTML special characters to avoid breaking layout or injection
+    function escapeHTML(str) {
+      return str.replace(/[&<>"']/g, function (match) {
+        const escapeMap = {
+          '&': '&amp;',
+          '<': '&lt;',
+          '>': '&gt;',
+          '"': '&quot;',
+          "'": '&#39;',
+        };
+        return escapeMap[match];
+      });
+    }
+
+    async function loadFeedback() {
+      try {
+        const res = await fetch('/api/feedback');
+        if (!res.ok) throw new Error('Failed to fetch feedback');
+
+        const data = await res.json();
+        const container = document.getElementById('feedbackList');
+
+        if (data.feedback.length === 0) {
+          container.innerHTML = '<p>No feedback submitted yet.</p>';
+          return;
+        }
+
+        container.innerHTML = data.feedback
+          .map((entry) => {
+            // Escape HTML and replace newlines with <br>
+            const safeEntry = escapeHTML(entry).replace(/\n/g, '<br>');
+            return `<div class="feedback-entry">${safeEntry}</div>`;
+          })
+          .join('<hr>');
+      } catch (error) {
+        document.getElementById('feedbackList').innerHTML =
+          '<p>Error loading feedback.</p>';
+        console.error(error);
+      }
+    }
+
+    loadFeedback();
+  </script>
+</body>
+</html>
